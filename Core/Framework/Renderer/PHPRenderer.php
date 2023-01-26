@@ -8,6 +8,13 @@ class PHPRenderer implements RendererInterface
     private array $paths = [];
 
     private array $globals = [];
+
+    public function __construct(string $defaultPath = null)
+    {
+        if (!is_null($defaultPath)) {
+            $this->addPath($defaultPath);
+        }
+    }
     public function addPath(string $namespace, ?string $path = null): void
     {
         if (is_null($path)) {
@@ -27,6 +34,7 @@ class PHPRenderer implements RendererInterface
             $path = $this->paths[self::DEFAULT_NAMESPACE] . DIRECTORY_SEPARATOR . $view . '.php';
         }
         ob_start();
+        $renderer = $this;
         extract($this->globals);
         extract($params);
         require($path);

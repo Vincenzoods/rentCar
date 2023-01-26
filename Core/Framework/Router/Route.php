@@ -28,7 +28,7 @@ class Route
     /**
      * Get the value of callable
      */
-    public function getCallable()
+    public function getCallback()
     {
         return $this->callable;
     }
