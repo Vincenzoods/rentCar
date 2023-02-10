@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig'%}
+
+{% block body %}
+
+	<form action="" method="POST">
+		<label for="model">Modele</label>
+		<input name="modele" value="{{ voiture.model }}" id="modele" type="text">
+		<select name="marque">
+			<option value="null">---</option>
+			{% for marque in marques %}
+				{% if marque.id is same as (voiture.marque.id) %}
+					<option value="{{marque.id}}" selected>{{marque.nomMarque}}</option>
+				{% else %}
+					<option value="{{marque.id}}">{{marque.nomMarque}}</option>
+				{% endif %}
+			{% endfor %}
+		</select>
+		<label for="color">Couleur</label>
+		<input name="color" value="{{ voiture.couleur }}" id="color" type="color">
+		<input type="submit" value="Modifier">
+	</form>
+{% if hasToast() %}
+				{{ renderToast() }}
+			{% endif %}
+{% endblock %}
+

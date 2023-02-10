@@ -4,11 +4,12 @@ namespace App\Home;
 
 
 use Core\Framework\Router\Router;
-use core\Framework\Renderer\RendererInterface;
+use Core\Framework\Renderer\RendererInterface;
+use Core\Framework\AbstractClass\AbstractModule;
 
-class HomeModule
+class HomeModule extends AbstractModule
 {
-    
+    public const DEFINITIONS = __DIR__. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
     private Router $router;
     private RendererInterface $renderer;
     public function __construct(Router $router, RendererInterface $renderer)

@@ -15,7 +15,7 @@
                 <a href="/">Home</a>
             </li>
             <li>
-                <a href="/addVehicule">Ajouter un véhicule</a>
+                <a href="<?php $routeur->generateUri('car.addCar') ?>">Ajouter un véhicule</a>
             </li>
         </ul>
     </nav>

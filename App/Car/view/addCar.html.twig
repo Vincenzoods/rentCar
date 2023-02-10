@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig'%}
+
+{% block body %}
+
+	<form action="" method="POST" enctype="multipart/form-data">
+		<label for="model">Modèle</label>
+		<input name="modele" id="modele" type="text">
+		<select name="marque">
+			<option value="null">---</option>
+			{% for marque in marques %}
+				<option value="{{marque.id}}">{{marque.nomMarque}}</option>
+			{% endfor %}
+		</select>
+
+		<label for="color">Couleur</label>
+		
+		<input name="color" id="color" type="color">
+		<input type="file" name="img" id="img">
+		<input type="submit" value="Ajouter">
+	</form>
+
+{% endblock %}
+

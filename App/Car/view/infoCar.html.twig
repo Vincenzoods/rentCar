@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig'%}
+{% block stylesheet %}
+<link rel="stylesheet" href="./Assets/css/car.info.css"/>
+{% endblock %}
+
+{% block body %}
+<h1>Détails du véhicules</h1>
+
+<h2>{{voiture.marque.nomMarque}} | {{voiture.model}} </h2>
+<table>
+
+<thead>
+    <tr>
+        <th>Modèle</th>
+        <th>Marque</th>
+        <th>Couleur</th>
+    </tr>
+</thead>
+    <tbody>
+     <tr> 
+        <td>{{ voiture.model }}</td>
+        <td>{{ voiture.marque.nomMarque}}</td>
+        <td>{{ voiture.couleur }}</td>
+        </tr>
+          
+    </tbody>
+</table>
+
+{% endblock %}
